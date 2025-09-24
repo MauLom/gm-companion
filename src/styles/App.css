@@ -1,0 +1,585 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.navbar {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-brand h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Section headers */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-success {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-small {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn-damage {
+  background-color: #e74c3c;
+  color: white;
+  min-width: 40px;
+}
+
+.btn-heal {
+  background-color: #27ae60;
+  color: white;
+  min-width: 40px;
+}
+
+/* Forms */
+.character-form, .creature-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+/* Abilities section */
+.abilities-section h4 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.abilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.modifier {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+  margin-left: 0.5rem;
+}
+
+/* Cards grid */
+.characters-grid, .creatures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Character cards */
+.character-card, .creature-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.character-card:hover, .creature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.character-header, .creature-header {
+  margin-bottom: 1rem;
+}
+
+.character-header h3, .creature-header h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.character-class {
+  color: #7f8c8d;
+  font-size: 0.875rem;
+}
+
+.creature-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.creature-type {
+  color: #7f8c8d;
+}
+
+.challenge-rating {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Character stats */
+.character-stats, .creature-stats {
+  margin-bottom: 1rem;
+}
+
+.stat-group {
+  margin-bottom: 1rem;
+}
+
+.stat-group label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.hp-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hp-display {
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.stat-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat-item {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Abilities display */
+.abilities-display {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ability-stat {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.ability-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #7f8c8d;
+}
+
+.ability-score {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.ability-modifier {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+}
+
+/* Status */
+.character-status, .creature-status {
+  margin-bottom: 1rem;
+}
+
+.character-status label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.status-select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.status-healthy { background-color: #d5f4e6; color: #27ae60; }
+.status-injured { background-color: #fef9e7; color: #f39c12; }
+.status-bloodied { background-color: #fadbd8; color: #e74c3c; }
+.status-unconscious { background-color: #e8daef; color: #8e44ad; }
+.status-dead { background-color: #d5d6d6; color: #2c3e50; }
+.status-poisoned { background-color: #d5f2d0; color: #27ae60; }
+.status-charmed { background-color: #fce4ec; color: #e91e63; }
+.status-paralyzed { background-color: #e1f5fe; color: #2196f3; }
+
+/* Actions */
+.character-actions, .creature-actions, .participant-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Empty states */
+.empty-state, .empty-battle {
+  text-align: center;
+  padding: 3rem;
+  color: #7f8c8d;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Battle Tracker specific styles */
+.battle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.battle-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pre-battle-controls, .battle-active-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.round-info {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* Participant cards */
+.participants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.participant-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: relative;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.participant-card.current-turn {
+  border-color: #3498db;
+  box-shadow: 0 4px 20px rgba(52, 152, 219, 0.3);
+  transform: translateX(10px);
+}
+
+.participant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.participant-info h3 {
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.participant-type {
+  color: #7f8c8d;
+  font-size: 0.875rem;
+}
+
+.initiative-display {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 0.75rem;
+  border-radius: 8px;
+  min-width: 100px;
+}
+
+.initiative-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  margin-bottom: 0.25rem;
+}
+
+.initiative-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.participant-stats {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hp-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.hp-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hp-display {
+  flex: 1;
+  margin: 0 0.5rem;
+}
+
+.hp-text {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hp-bar {
+  height: 20px;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hp-fill {
+  height: 100%;
+  transition: width 0.3s;
+  border-radius: 10px;
+}
+
+.hp-bar.healthy .hp-fill { background-color: #27ae60; }
+.hp-bar.injured .hp-fill { background-color: #f39c12; }
+.hp-bar.bloodied .hp-fill { background-color: #e67e22; }
+.hp-bar.critical .hp-fill { background-color: #e74c3c; }
+.hp-bar.dead .hp-fill { background-color: #95a5a6; }
+
+.other-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.status-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-section label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.current-turn-indicator {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background-color: #3498db;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .abilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .characters-grid, .creatures-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .participant-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .abilities-display {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
